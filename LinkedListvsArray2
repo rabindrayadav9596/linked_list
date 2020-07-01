@@ -1,0 +1,10 @@
+Arrays
+
+1. constant accessing
+2. difficulty in insertion and removal of data
+3. memory allocated during compile time
+4. better cache locality
+
+Linked List
+1. Dynamic
+2. Linear time accessing elements
