@@ -9,7 +9,9 @@ class LinkedList:
         head = None
 
     def printList(self):
+        # 1. make temporary node as head
         temp = self.head
+        # 2. loop till temp is NULL
         while temp:
             print(temp.data)
             temp = temp.next
@@ -49,13 +51,17 @@ class LinkedList:
     # time complexity is O(n)
 
     def append(self, new_data):
+        # 1. create a new node
         new_node = Node(new_data)
+        # 2. if head is empty make new node as head
         if self.head is None:
             self.head = new_node
             return
+        # 3. make temporary node as head and traverse through linked list and make last node as temp node
         temp = self.head
         while(temp.next):
             temp = temp.next
+        # 4. point next ptr of temporary node to new Node
         temp.next = new_node
 
 
