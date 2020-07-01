@@ -14,7 +14,7 @@ class LinkedList:
             self.head = new_node
             return
         temp = self.head
-        while(temp.next):
+        while temp.next:
             temp = temp.next
         temp.next = new_node
 
@@ -24,29 +24,15 @@ class LinkedList:
             print(temp.data)
             temp = temp.next
 
-    def delete_node(self, position):
-        # If linked list is empty
-        if self.head == None:
-            return
-
-        temp = self.head
-        # if head node needs to be deleted
-        if position == 0:
-            self.head = temp.next
-            temp = None
-            return
-
-        position_count = 0
-        prev = temp
-        while(temp and position_count != position):
-            prev = temp
-            temp = temp.next
-            position_count += 1
-        if temp is None:
-            print("No item to delete")
-            return
-        prev.next = temp.next
-        temp = None
+    def delete_all_nodes(self):
+        current_node = self.head
+        while current_node:
+            next = current_node.next
+            del current_node.data
+            #del current_node.next
+            current_node = next
+            self.head = None
+        print("Everything is deleted. sorry to say goodbye")
 
 
 if __name__ == "__main__":
@@ -54,5 +40,7 @@ if __name__ == "__main__":
     llist.append(1)
     llist.append(2)
     llist.append(3)
-    llist.delete_node(2)
+    llist.append(4)
+
+    llist.delete_all_nodes()
     llist.print_list()
