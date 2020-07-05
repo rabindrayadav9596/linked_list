@@ -63,6 +63,18 @@ class LinkedList:
         return True
 
 
+# method 1: Create a stack of linked list data....then traverse the linked list and check the value with
+# popped value from stack......time complexity O(n)....space complexity O(n)
+
+
+# best
+# method 2: find the middle point of the linked list by calculating length of linked list by traversing
+# then reverse the second half of linked list and compare with the first half...if they are equal...llist is palindrome
+# time complexity = O(n)...space complexity O(1)
+
+# method 3: Recursion
+
+
 llist = LinkedList()
 llist.append('m')
 llist.append('a')
